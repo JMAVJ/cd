@@ -1,0 +1,41 @@
+<html>
+
+<body>
+	<div id='background'>
+		<div id='character'
+			style='position:absolute; top:100px; left:450px; transition:100ms; background-image: url("img/down1.png"); width:59px; height:86px;'>
+		</div>
+	</div>
+	<script type="text/javascript">
+		let xPos = 450,
+			yPos = 100;
+
+		function updateCharacter() {
+			//Update Character Position
+			character.style.left = xPos + 'px';
+			character.style.top = yPos + 'px';
+		}
+
+		document.onkeydown = (key) => {
+			const character = document.getElementById('character');
+
+			//Update Position, Source and Direction Variables
+			if (key.keyCode == 37) { //Left
+				xPos = xPos - 10;
+
+			} else if (key.keyCode == 39) { //Right
+				xPos = xPos + 10;
+
+			} else if (key.keyCode == 38) { //Top
+				yPos = yPos - 10;
+
+			} else if (key.keyCode == 40) { //Bottom
+				yPos = yPos + 10;
+			}
+
+			updateCharacter();
+		}
+	</script>
+</body>
+
+</html>
