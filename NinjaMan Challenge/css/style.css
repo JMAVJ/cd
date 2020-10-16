@@ -1,0 +1,91 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+button {
+    margin-right: 10px;
+    padding: 8px;
+}
+
+ul {
+    margin: 30px;
+}
+
+.row {
+    display: flex;
+}
+
+.wall {
+    background-color: blue;
+    height: 40px;
+    width: 40px;
+    display: inline-block;
+}
+
+.blank {
+    background-color: black;
+    height: 40px;
+    width: 40px;
+    display: inline-block;
+}
+
+.sushi {
+    background-color: black;
+    background-image: url('../assets/sushi.png');
+    height: 40px;
+    width: 40px;
+    display: inline-block;
+    background-size: contain;
+}
+
+.onigiri {
+    background-color: black;
+    background-image: url('../assets/onigiri.png');
+    height: 40px;
+    width: 40px;
+    display: inline-block;
+    background-size: contain;
+}
+
+.character {
+    background-color: black;
+    height: 40px;
+    width: 40px;
+    display: inline-block;
+    background-size: contain;
+    position: absolute;
+    left: 40px;
+    top: 40px;
+    transition: 100ms;
+}
+
+#ninja {
+    background-image: url('../assets/ninja.gif');
+}
+
+#bluey {
+    background-image: url('../assets/bluey.gif');
+}
+
+#red {
+    background-image: url('../assets/red.gif');
+}
+
+#scoreboard {
+    height: 40px;
+    font-size: 100px;
+}
+
+#scoreboard div {
+    font-size: 50px;
+    padding: 10px;
+}
+
+.buttons {
+    display: flex;
+}
+
+.infoDiv li {
+    font-size: 25px;
+}
