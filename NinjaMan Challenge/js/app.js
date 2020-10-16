@@ -15,7 +15,7 @@ function generateMap(rows, cols){
 
         //Create walls for the edges
         if (row == 0 || row == rows-1) {
-            for (let i=0; i<=cols-1; i++) {
+            for (let i=0; i<=cols; i++) {
                 arr.push(1);
             }
             output.push(arr);
@@ -23,7 +23,7 @@ function generateMap(rows, cols){
         }
 
         //Column Control
-        for (let col=0; col<cols-1; col++) {
+        for (let col=0; col<cols; col++) {
             if (col == 0) {
                 arr.push(1);
                 continue;
