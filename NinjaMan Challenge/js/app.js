@@ -31,14 +31,12 @@ function generateMap(rows, cols){
             arr.push(Math.floor(Math.random() * (3 - 1 + 1)) + 1);
         }
         arr[cols] = 1;
-        console.log(arr);
         output.push(arr);
     }
     return output;
 }
 
 var grid = generateMap(15, 15);
-console.log(grid);
 
 const gridElements = {
     0: 'blank',
