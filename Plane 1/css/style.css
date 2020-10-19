@@ -1,0 +1,19 @@
+#background {
+    background-image: url('../assets/ocean.jpg');
+    width: 900px;
+    height: 700px;
+}
+
+.player {
+    background-image: url('../assets/player.png');
+    position: absolute;
+    width: 70px;
+    height: 75px;
+}
+
+.enemy {
+    background-image: url('../assets/enemy.png');
+    position: absolute;
+    width: 70px;
+    height: 75px;
+}
