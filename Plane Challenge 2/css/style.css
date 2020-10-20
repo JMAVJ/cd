@@ -1,0 +1,31 @@
+#background {
+    background-image: url('../assets/background.png');
+    width: 900px;
+    height: 700px;
+    overflow: hidden;
+}
+
+.player {
+    background-image: url('../assets/player_new.png');
+    position: absolute;
+    width: 70px;
+    height: 75px;
+}
+
+#player {
+    transition: 0.3s linear;
+}
+
+.enemy {
+    background-image: url('../assets/enemy_new.png');
+    position: absolute;
+    width: 70px;
+    height: 75px;
+}
+
+.projectile {
+    width: 2px;
+    background-image: linear-gradient(purple, pink);
+    height: 10px;
+    position: absolute;
+}
