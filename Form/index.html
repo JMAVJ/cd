@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Form</title>
+        <style>
+            input[type=text], input[type=password], input[type=date] {
+                display: inline-block;
+                box-sizing: border-box;
+                width: 100%;
+                height: 3vh;
+                border-radius: 5px;
+                padding: 12px 20px;
+                margin: 10px 0px;
+            }
+
+            #form {
+                position: absolute;
+                width: 20%;
+                left: 40%;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="form">
+            <form>
+                <label>Nombre</label>
+                <input type="text" name="name">
+                <label>Apellido</label>
+                <input type="text" name="last-name">
+                <label>Email</label>
+                <input type="text" name="email">
+                <label>Contraseña</label>
+                <input type="password" name="password">
+                <label>Confirmar Contraseña</label>
+                <input type="password" name="confirm">
+                <label>Cumpleaños</label>
+                <input type="date" name="date">
+                <input type="radio" name="sex1">
+                <label>Hombre</label>
+                <input type="radio" name="sex2">
+                <label>Mujer</label>
+                <input type="radio" name="sex3">
+                <label>Prefiero no decirlo</label>
+                <br>
+                <label>Una breve descripción de ti</label>
+                <textarea name="description" cols="30" rows="10"></textarea>
+                <br>
+                <label>Lenguaje Favorito</label>
+                <select name="lang">
+                    <option value="Javascript" selected="selected">Javascript</option>
+                    <option value="Python">Python</option>
+                    <option value="C">C</option>
+                    <option value="C++">C++</option>
+                    <option value="C#">C#</option>
+                    <option value="Ruby">Ruby</option>
+                    <option value="PHP">PHP</option>
+                    <option value="Swift">Swift</option>
+                    <option value="Kotlin">Kotlin</option>
+                    <option value="Go">Go</option>
+                    <option value="Assembly">Assembly</option>
+                </select>
+                <br>
+                <input type="submit" value="Enviar">
+            </form>
+        </div>
+    </body>
+</html>
