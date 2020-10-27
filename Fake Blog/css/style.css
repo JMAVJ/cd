@@ -1,0 +1,48 @@
+* {
+    color: white;
+    font-family: 'Open Sans',
+        sans-serif;
+}
+
+html {
+    min-height: 100%
+}
+
+body {
+    height: 100%;
+    background: rgb(55, 55, 55);
+    background: linear-gradient(180deg, rgba(55, 55, 55, 1) 0%, rgba(55, 55, 55, 1) 75%, rgba(207, 132, 47, 1) 100%);
+}
+
+h1,
+p {
+    text-align: justify;
+}
+
+#car {
+    width: 600px;
+    border-radius: 10px;
+}
+
+#paragraph {
+    width: 600px;
+}
+
+table,
+th,
+td {
+    border: 1px solid white;
+    border-collapse: collapse;
+}
+
+td {
+    padding: 10px;
+}
+
+input[type=submit] {
+    border: 3px solid white;
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 5px;
+    margin-top: 20px;
+    padding: 10px;
+}
