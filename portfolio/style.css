@@ -1,0 +1,162 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+}
+
+html,
+body {
+  height: 100%;
+  width: 1300px;
+  margin: auto;
+  background: lightgray;
+}
+
+.wrapper {
+  padding: 30px;
+  background: radial-gradient(rgb(155, 155, 155), #330202);
+}
+
+header {
+  background: white;
+  padding: 15px 30px;
+  height: 70px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.logo,
+.slogan {
+  display: inline-block;
+  height: 100%;
+  width: 500px;
+}
+
+.logo h1 {
+  font-family: "Comic Sans MS", cursive, sans-serif;
+  line-height: 40px;
+}
+
+.slogan h2 {
+  line-height: 45px;
+  text-align: right;
+}
+
+.picture {
+  display: inline-block;
+  border: 5px solid lightgrey;
+  width: 550px;
+}
+
+.picture img {
+  display: block;
+  width: 100%;
+  background-size: cover;
+}
+
+.about {
+  display: inline-block;
+  vertical-align: top;
+  background: #e9e1e9;
+  width: 654px;
+  margin-left: 30px;
+  height: 365px;
+}
+
+.head {
+  background: linear-gradient(to bottom, darkgrey, grey 50%, darkgrey);
+  color: white;
+  height: 40px;
+  padding: 5px 10px;
+}
+
+.content {
+  background: #f1ecf1;
+  height: 89%;
+  font-size: 20px;
+  padding: 10px;
+}
+
+.content p {
+  margin-bottom: 15px;
+}
+
+.content a {
+  color: black;
+}
+
+.projects {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.card {
+  display: inline-block;
+  background: #f7f3f6;
+  width: 395px;
+}
+
+.card-title {
+  background: linear-gradient(to bottom, darkgrey, grey 50%, darkgrey);
+  height: 50px;
+  color: white;
+  padding: 7px;
+}
+
+.card-content {
+  height: 450px;
+}
+
+.card-content img {
+  width: 100%;
+}
+
+.card-text-container {
+  padding: 10px;
+  text-align: justify;
+}
+
+.icons {
+  padding: 5px;
+  padding-right: 0;
+}
+
+.icons img {
+  margin: 3px 3px;
+  display: inline-block;
+  width: 65px;
+}
+
+.card button {
+  display: block;
+  margin: 10px auto;
+  background: #407d61;
+  border-radius: 5px;
+  width: 130px;
+  height: 30px;
+  color: white;
+}
+
+footer {
+  background: white;
+  height: 100px;
+  text-align: center;
+  padding: 10px;
+}
+
+.icon {
+  width: 20px;
+  vertical-align: bottom;
+}
+
+.icon-label {
+  vertical-align: top;
+  font-style: italic;
+  color: black;
+}
+
+.media {
+  margin-top: 10px;
+}
