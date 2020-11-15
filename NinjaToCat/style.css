@@ -10,4 +10,6 @@ main {
 
 .img-container img {
   width: 300px;
+  user-select: none;
+  -webkit-user-drag: none;
 }
