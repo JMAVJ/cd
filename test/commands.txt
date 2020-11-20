@@ -1,0 +1,12 @@
+clear
+sudo
+mkdir
+touch
+rm
+pwd
+rmdir
+kill
+mv
+cp
+traceroute
+find
