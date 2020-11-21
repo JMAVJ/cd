@@ -1,0 +1,132 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Nunito", sans-serif;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+main {
+  height: 100%;
+  background-color: #ad310b;
+}
+
+header {
+  padding: 20px;
+  color: white;
+  font-size: 25px;
+  font-weight: 700;
+}
+
+.search-bar {
+  margin-top: 10px;
+}
+
+.form-container {
+  margin: auto;
+  width: 230px;
+  text-align: center;
+  border: 2px solid rgb(228, 228, 228);
+  border-radius: 10px;
+}
+
+input[type="text"] {
+  padding: 10px;
+  background: none;
+  border: none;
+  border-radius: 10px;
+  color: rgb(220, 220, 220);
+  width: 150px;
+}
+
+input[type="text"]:focus,
+input[type="submit"]:focus {
+  outline: none !important;
+}
+
+input[type="submit"] {
+  background: none;
+  border: none;
+  color: whitesmoke;
+  cursor: pointer;
+}
+
+.result {
+  margin-top: 50px;
+  height: 100%;
+}
+
+.container {
+  border: 5px solid white;
+  border-radius: 20px;
+  padding: 20px;
+}
+
+.title {
+  display: inline-block;
+  margin: auto;
+  width: 200px;
+}
+
+.result h1 {
+  font-size: 40px;
+}
+
+#city {
+  text-align: center;
+}
+
+span {
+  font-weight: 300;
+  font-size: 25px;
+}
+
+#temp {
+  font-size: 100px;
+  text-align: center;
+}
+
+.result h2 {
+  font-size: 30px;
+  text-align: center;
+}
+
+.container {
+  color: white;
+  margin: auto;
+  width: 300px;
+}
+
+.clear {
+  background: rgb(177, 175, 67);
+  background: linear-gradient(
+    153deg,
+    rgba(177, 175, 67, 1) 0%,
+    rgba(116, 141, 255, 1) 50%,
+    rgba(74, 106, 255, 1) 100%
+  );
+}
+
+.clouds {
+  background: rgb(218, 217, 182);
+  background: linear-gradient(
+    153deg,
+    rgba(218, 217, 182, 1) 0%,
+    rgba(166, 175, 213, 1) 15%,
+    rgba(122, 125, 140, 1) 100%
+  );
+}
+
+.mist {
+  background: rgb(173, 160, 160);
+  background: linear-gradient(
+    153deg,
+    rgba(173, 160, 160, 1) 0%,
+    rgba(142, 148, 173, 1) 15%,
+    rgba(122, 125, 140, 1) 100%
+  );
+}
