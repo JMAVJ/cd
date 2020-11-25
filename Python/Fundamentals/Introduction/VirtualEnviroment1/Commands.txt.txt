@@ -1,0 +1,6 @@
+pip list: Lists the installed packages
+deactivate: deactivates the virtual enviroment
+pip list (venv deactivated): Lists the globally installed packages
+pip uninstall Django: Uninstalls the Django package
+pip show Django: Shows information about the Django package
+pip search Flask: Search for the Flask package
