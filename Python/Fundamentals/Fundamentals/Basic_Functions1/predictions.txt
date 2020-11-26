@@ -1,0 +1,44 @@
+#1
+Prediction: 5
+
+#2 
+Prediction: 10
+
+#3
+Prediction: 5
+
+#4
+Prediction: 5, None
+
+#5
+Prediction: 5, None
+
+#6
+Prediction: Syntax Error (Trying to add 'None')
+
+#7
+Prediction: 25
+
+#8
+Prediction: 100, 10
+
+#9
+Prediction: 7, 14, 21
+
+#10
+Prediction: 8
+
+#11
+Prediction: 500, 500, 300, 500
+
+#12
+Prediction: 500, 500, 300, 300
+
+#13
+Prediction: 500, 500, 300, 300
+
+#14
+Prediction: 1, 3, 2
+
+#15
+Prediction: 1, 3, 5, 10
