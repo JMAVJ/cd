@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href={{ url_for('static', filename='css/style.css') }}>
+    <title>Blocks</title>
+    <style>
+        .block {
+            background-color: {{ color }};
+        }
+    </style>
+</head>
+<body>
+    <section class="title">
+        <h1>Welcome!</h1>
+    </section>
+    <section class="blocks">
+        <div class="blocks-container">
+            {% for _ in range(0, times) %}
+                <div class="block" style={{ color }}></div>
+            {% endfor %}
+        </div>
+    </section>
+</body>
+</html>
