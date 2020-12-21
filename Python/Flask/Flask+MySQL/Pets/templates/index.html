@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <title>Pets</title>
+</head>
+<body>
+    <main>
+        <section class="mt-5">
+            <div class="col-md-6 m-auto"></div>
+                <h1 class="text-center">Pets</h1>
+            </div>
+            <div class="col-md-8 m-auto">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Type</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for pet in pets %}
+                            <tr>
+                                <td>{{ pet['id'] }}</td>
+                                <td>{{ pet['name'] }}</td>
+                                <td>{{ pet['type'] }}</td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </section>
+        <section class="mt-5">
+            <div class="col-md-6 m-auto">
+                <h1 class="text-center">Add a Pet</h1>
+            </div>
+            <div class="col-sm-3 m-auto">
+                <form action="api/add-pet" method="POST" class="form">
+                    <label for="name"></label>
+                    <input type="text" name="name" id="name" class="form-control">
+                    <label for="type"></label>
+                    <input type="text" name="type" id="type" class="form-control">
+                    <input type="submit" class="btn btn-primary mt-3" value="Add">
+                </form>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
