@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flask</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">    
+</head>
+<body>
+    <div class="container">
+        <div class="errors col-md-8 m-auto">
+            {% with messages = get_flashed_messages(with_categories=true) %}
+                {% if messages %}
+                    {% for category, message in messages %}
+                        <div class="alert alert-{{ category }}">{{ message }}</div>
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
+        </div>
+        <div class="row">
+            <div class="col-6">
+                <h1>Sign Up</h1>
+                <div class="col-md-5 p-3">
+                    <form action="/auth/sign-up" method="POST" class="form">
+                        <label for="email">Email</label>
+                        <input type="email" name="email" class="form-control mb-3" id="email">
+                        <label for="password">Password</label>
+                        <input type="password" name="password" class="form-control mb-3" id="password">
+                        <label for="password-confirm">Confirm the password</label>
+                        <input type="password" name="password_confirmation" class="form-control mb-3" id="password-confirm">
+                        <input type="submit" class="btn btn-primary" value="Sign Up">
+                    </form>
+                </div>
+                <ul>
+                    <li>
+                        Campos: Correo, contraseña, repetir contraseña
+                    </li>
+                    <li>
+                        Contraseña de minimo 8 de largo
+                    </li>
+                    <li>
+                        La contraseña y su confirmación deben ser igual
+                    </li>
+                    <li>
+                        Usar Bcrypt para hashing de contraseña
+                    </li>
+                    <li>
+                        Prevenir SQL Inyection
+                    </li>
+                </ul>
+            </div>
+            <div class="col-6">
+                <h1>Sign In</h1>
+                <div class="col-md-5 p-3">
+                    <form action="/auth/sign-in" method="POST" class="form">
+                        <label for="email">Email</label>
+                        <input type="email" name="email" class="form-control mb-3" id="email">
+                        <label for="password">Password</label>
+                        <input type="password" name="password" class="form-control mb-3" id="password">
+                        <input type="submit" class="btn btn-primary" value="Sign In">
+                    </form>
+                </div>
+                <ul>
+                    <li>
+                        Campos: Correo y contraseña
+                    </li>
+                    <li>
+                        errores en rojo
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
