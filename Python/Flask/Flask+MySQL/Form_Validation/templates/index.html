@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+</head>
+<body>
+    <main>
+        <section>
+            <div class="col-md-3 p-3">
+                <form action="/api/send" class="form" method="POST">
+                    <label for="name" class="form-label">Name</label>
+                    <input type="text" name="name" id="name" class="form-control">
+                    <label for="location" class="form-label">Language</label>
+                    <select name="location" id="location" class="form-select">
+                        <option value="Seattle">Seattle</option>
+                        <option value="Silicon Valley">Silicon Valley</option>
+                    </select>
+                    <label for="language" class="form-label">Language</label>
+                    <select name="language" id="language" class="form-select">
+                        <option value="Python">Python</option>
+                        <option value="JavaScript">JavaScript</option>
+                        <option value="C++">C++</option>
+                    </select>
+                    <label for="comment">Comment</label>
+                    <textarea name="comment" id="comment" class="form-control" cols="30" rows="10"></textarea>
+                    <input type="submit" value="Submit">
+                </form>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
