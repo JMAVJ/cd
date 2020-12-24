@@ -10,6 +10,13 @@
 <body>
     <main>
         <section>
+            {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                    {% for message in messages %}
+                        <div class="alert alert-warning">{{ message }}</div>
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
             <div class="col-md-3 p-3">
                 <form action="/api/send" class="form" method="POST">
                     <label for="name" class="form-label">Name</label>
