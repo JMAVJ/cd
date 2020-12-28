@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ninja Gold</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body class="bg-dark">
+    <main class="p-5">
+        <section>
+            <div>
+                <h3 class="d-inline-block me-3 text-light align-middle">Your Gold</h3>
+                <div class="border rounded col-md-1 d-inline-block p-1 text-light">{{ gold }}</div>
+                <a href="/reset_session">
+                    <button class="btn btn-outline-light ms-3">Reset</button>
+                </a>
+            </div>
+        </section>
+        <section class="mt-5 d-flex justify-content-between">
+            <div class="card col-md-2 p-3 text-center d-inline-block border bg-dark">
+                <h3 class="card-title text-light">Farm</h3>
+                <form action="/process_money" method="POST">
+                    {% csrf_token %}
+                    <input type="hidden" name="place" value="farm">
+                    <input type="submit" class="btn btn-outline-light mt-4 col-md-6 mx-auto" value="Find Gold">
+                </form>
+            </div>
+            <div class="card col-md-2 p-3 text-center d-inline-block border bg-dark">
+                <h3 class="card-title text-light">Cave</h3>
+                <form action="/process_money" method="POST">
+                    {% csrf_token %}
+                    <input type="hidden" name="place" value="cave">
+                    <input type="submit" class="btn btn-outline-light mt-4 col-md-6 mx-auto" value="Find Gold">
+                </form>
+            </div>
+            <div class="card col-md-2 p-3 text-center d-inline-block border bg-dark">
+                <h3 class="card-title text-light">House</h3>
+                <form action="/process_money" method="POST">
+                    {% csrf_token %}
+                    <input type="hidden" name="place" value="house">
+                    <input type="submit" class="btn btn-outline-light mt-4 col-md-6 mx-auto" value="Find Gold">
+                </form>
+            </div>
+            <div class="card col-md-2 p-3 text-center d-inline-block border bg-dark">
+                <h3 class="card-title text-light">Casino</h3>
+                <form action="/process_money" method="POST">
+                    {% csrf_token %}
+                    <input type="hidden" name="place" value="casino">
+                    <input type="submit" class="btn btn-outline-light mt-4 col-md-6 mx-auto" value="Find Gold">
+                </form>
+            </div>
+        </section>
+        <section class="mt-5">
+            <h3 class="text-light">Activities</h3>
+            <div class="overflow-scroll m-auto border rounded activity p-2">
+                {% for transaction in activity %}
+                    {% if transaction.success == True %}
+                        <p class="text-success">Found {{ transaction.profit }} gold in the {{ transaction.place }}</p>
+                    {% else %}
+                        <p class="text-danger">Lost {{ transaction.profit }} gold in the {{ transaction.place }}</p>
+                    {% endif %}
+                {% endfor %}
+            </div>
+        </section>
+    </main>
+</body>
+</html>
