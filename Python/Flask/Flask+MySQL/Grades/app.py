@@ -25,7 +25,6 @@ def student(id):
     mysql = connectToMySQL()
     query = f'SELECT * FROM `grades` WHERE student_id={id};'
     grades = mysql.query_db(query)
-    print(grades)
     return render_template('student.html', student=student[0], grades=grades)
 
 
@@ -46,13 +45,6 @@ def add_grade(id):
     }
 
     query = ' INSERT INTO `grades` (course, grade, date, comments, student_id) VALUES (%(course)s, %(grade)s, %(date)s, %(comments)s, %(student_id)s)'
-
-    # if len(data['date']) > 0 and len(data['comments']) > 0:
-    #     query = ' INSERT INTO `grades` (course, grade, date, comments, student_id) VALUES (%(course)s, %(grade)s, %(date)s, %(comments)s, %(student_id)s)'
-    # elif len(data['date']) > 0 and len(data['comments']) < 0:
-    #     query = ' INSERT INTO `grades` (course, grade, date, student_id) VALUES (%(course)s, %(grade)s, %(date)s, %(student_id)s)'
-    # else:
-    #     query = ' INSERT INTO `grades` (course, grade, student_id) VALUES (%(course)s, %(grade)s, %(student_id)s)'
 
     mysql.query_db(query, data)
     return redirect(f'/student/{id}')
