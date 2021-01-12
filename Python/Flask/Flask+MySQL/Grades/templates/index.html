@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Students</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+</head>
+
+<body class="p-3">
+  <header>
+    <h1>All Students</h1>
+  </header>
+  <main>
+    <section>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Year</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for student in students %}
+            <tr>
+              <td>{{ student['first_name'] }}</td>
+              <td>{{ student['last_name'] }}</td>
+              <td>{{ student['year'] }}</td>
+              <td>
+                <a href={{ url_for('student', id=student['id'])  }} class="d-inline-block">Report Card</a>
+                <p class="d-inline-block">|</p>
+                <a href="/add-grade/{{ student['id'] }}" class="d-inline-block">Add Course Grade</a>
+              </td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </section>
+  </main>
+</body>
+</html>

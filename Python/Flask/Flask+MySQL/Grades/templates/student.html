@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ student['first_name'] }}</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+</head>
+<body class="p-3">
+  <nav class="text-end">
+    <a href="/" class="d-inline-block">Dashboard</a>
+    <p class="d-inline-block">|</p>
+    <a href="" class="d-inline-block">Add Course Grade</a>
+  </nav>
+  <main>
+    <h1>{{ student['first_name'] + ' ' + student['last_name'] + ' Report Card'}}</h1>
+    <section>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Course</th>
+            <th>Grade</th>
+            <th>Comments</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for grade in grades %}
+            <tr>
+              <td>{{ grade['course'] }}</td>
+              <td>{{ grade['grade'] }}</td>
+              <td>{{ grade['comments'] }}</td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </section>
+  </main>
+    
+</body>
+</html>
