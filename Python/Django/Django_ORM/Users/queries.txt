@@ -1,0 +1,25 @@
+# Create an User
+User.objects.create(first_name='user1_fname', last_name= 'user1_lname', email_adress='email1@mail.com', age=19)
+
+# Get all the users
+User.objects.all()
+
+# Get last user
+User.objects.last()
+
+# Get first user
+User.objects.first()
+
+# Change user with id = 3 last_name
+>>> user = User.objects.get(id=3)
+>>> user.last_name = 'Pancakes'
+>>> user.save()
+
+# Delete user with id = 2
+User.objects.get(id=2).delete()
+
+# Order by first_name
+User.objects.order_by('first_name')
+
+# Order by first_name (desc)
+User.objects.order_by('-first_name')
