@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>New Show</title>
+
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <header class="p-3 col-md-4 m-auto">
+      <h1>New Show</h1>
+    </header>
+    <main>
+      <div class="form-container col-md-4 m-auto">
+        {% if messages %}
+        <div>
+          {% for message in messages %}
+          <div class="alert alert-warning">{{ message }}</div>
+          {% endfor %}
+        </div>
+        {% endif %}
+        <form action="/shows/new" method="POST">
+          {% csrf_token %}
+          <label for="title">Title</label>
+          <input class="form-control" type="text" name="title" id="title" />
+          <div class="network-container d-inline-block col-6">
+            <label for="network">Network</label>
+            <input
+              class="form-control"
+              type="text"
+              name="network"
+              id="network"
+            />
+          </div>
+          <div class="date-container col-5 d-inline-block">
+            <label for="date">Release Date</label>
+            <input class="form-control" type="date" name="date" id="date" />
+          </div>
+          <label for="description" class="d-block">Description</label>
+          <textarea
+            name="description"
+            id="description"
+            class="form-control"
+            cols="30"
+            rows="10"
+          ></textarea>
+          <div class="text-center p-3">
+            <input type="submit" class="btn btn-primary" value="Create" />
+          </div>
+        </form>
+      </div>
+    </main>
+  </body>
+</html>

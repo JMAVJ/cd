@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ show.title }}</title>
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+  <header class="p-3">
+    <h1>{{ show.title }}</h1>
+  </header>
+  <main class="p-3">
+    <p>Title: {{ show.title }}</p>
+    <p>Network: {{ show.network }}</p>
+    <p>Release Date: {{ show.release_date }}</p>
+    <p>Description: {{ show.description }}</p>
+  </main>
+  <footer class="p-3">
+    <a href="/shows/{{ show.id }}/edit">Edit</a> |
+    <a href="/shows/delete/{{ show.id }}">Delete</a>|
+    <a href="/shows">Go Back</a>
+  </footer>
+</body>
+</html>
