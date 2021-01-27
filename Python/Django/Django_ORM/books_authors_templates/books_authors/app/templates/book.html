@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{ book.title }}</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body class="bg-dark">
+    <section class="col-10 m-auto mt-3">
+      <h1 class="text-light">{{ book.title }}</h1>
+      <h5 class="text-light">ID: {{ book.id }}</h5>
+      <h5 class="text-light">Description:</h5>
+      <p class="text-light">{{ book.desc }}</p>
+      <h5 class="text-light">Authors</h5>
+      <ul>
+        {% for author in book_authors %}
+        <li class="text-light">
+          {{ author.first_name }} {{ author.last_name }}
+        </li>
+        {% endfor %}
+      </ul>
+      <form action="/add-author-to-book/{{ book.id }}" method="POST">
+        {% csrf_token %}
+        <select name="author" id="author" value="Select Author">
+          <option value="none" disabled selected>Add an author</option>
+          {% for author in authors %}
+          <option value="{{ author.id }}">
+            {{ author.first_name }} {{ author.last_name }}
+          </option>
+          {% endfor %}</select
+        ><br />
+        <input type="submit" value="Add Author" class="btn btn-primary mt-3" />
+      </form>
+    </section>
+  </body>
+</html>
