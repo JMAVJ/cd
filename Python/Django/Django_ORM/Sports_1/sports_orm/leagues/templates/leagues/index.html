@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Sports Leagues</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <h1>Baseball Leagues</h1>
+    <ul>
+      {% for league in baseball_leagues %}
+      <li>{{ league.name }}</li>
+      {% endfor %}
+    </ul>
+    <h1>Women Leagues</h1>
+    <ul>
+      {% for league in women_leagues %}
+      <li>{{ league.name }}</li>
+      {% endfor %}
+    </ul>
+    <h1>Hockey Leagues</h1>
+    <ul>
+      {% for league in hockey_leagues %}
+      <li>{{ league.name }}</li>
+      {% endfor %}
+    </ul>
+    <h1>Not Football Leagues</h1>
+    <ul>
+      {% for league in not_football_leagues %}
+      <li>{{ league.name }}</li>
+      {% endfor %}
+    </ul>
+    <h1>Conference Leagues</h1>
+    <ul>
+      {% for league in conference_leagues %}
+      <li>{{ league.name }}</li>
+      {% endfor %}
+    </ul>
+    <h1>Transamerican Leagues</h1>
+    <ul>
+      {% for league in transamerican_leagues %}
+      <li>{{ league.name }}</li>
+      {% endfor %}
+    </ul>
+    <h1>Dallas Teams</h1>
+    <ul>
+      {% for team in dallas_teams %}
+      <li>{{ team.team_name }}</li>
+      {% endfor %}
+    </ul>
+    <h1>Raptors Teams</h1>
+    <ul>
+      {% for team in raptors_teams %}
+      <li>{{ team.team_name }}</li>
+      {% endfor %}
+    </ul>
+    <h1>City Teams</h1>
+    <ul>
+      {% for team in city_teams %}
+      <li>{{ team.team_name }}</li>
+      {% endfor %}
+    </ul>
+    <h1>Teams that start with "T"</h1>
+    <ul>
+      {% for team in t_teams %}
+      <li>{{ team.team_name }}</li>
+      {% endfor %}
+    </ul>
+    <h1>Location Sorted Teams</h1>
+    <ul>
+      {% for team in location_sorted_teams %}
+      <li>{{ team.location }} {{ team.team_name }}</li>
+      {% endfor %}
+    </ul>
+    <h1>Descendant Name Sorted Teams</h1>
+    <ul>
+      {% for team in desc_name_sorted_teams %}
+      <li>{{ team.team_name }}</li>
+      {% endfor %}
+    </ul>
+    <h1>Cooper Last Name Players</h1>
+    <ul>
+      {% for player in cooper_lastname_players %}
+      <li>{{ player.first_name }} {{ player.last_name }}</li>
+      {% endfor %}
+    </ul>
+    <h1>Joshua Named Players</h1>
+    <ul>
+      {% for player in joshua_named_players %}
+      <li>{{ player.first_name }} {{ player.last_name }}</li>
+      {% endfor %}
+    </ul>
+    <h1>Cooper Last Name Players Except Joshua</h1>
+    <ul>
+      {% for player in cooper_lastname_players_except_joshua %}
+      <li>{{ player.first_name }} {{ player.last_name }}</li>
+      {% endfor %}
+    </ul>
+    <h1>Alexander or Wyatt Named Players</h1>
+    <ul>
+      {% for player in alexander_or_wyatt_players %}
+      <li>{{ player.first_name }} {{ player.last_name }}</li>
+      {% endfor %}
+    </ul>
+  </body>
+</html>
