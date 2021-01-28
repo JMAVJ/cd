@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Courses</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body class="bg-dark text-light">
+    <section class="form col-md-6 col-sm-11 mx-auto mt-5">
+      <h1>Add Course</h1>
+      {% if messages %}
+      <div class="">
+        {% for message in messages %}
+        <div class="alert alert-warning">{{ message }}</div>
+        {% endfor %}
+      </div>
+      {% endif %}
+      <form action="/course/add" method="POST" class="form mt-3">
+        {% csrf_token %}
+        <label for="name" class="form-label">Name</label>
+        <input
+          type="text"
+          name="name"
+          id="name"
+          class="form-control bg-dark text-light"
+        />
+        <label for="description" class="form-label mt-3">Description</label>
+        <textarea
+          name="description"
+          id="description"
+          cols="30"
+          rows="5"
+          class="form-control bg-dark text-light"
+        ></textarea>
+        <input type="submit" value="Add" class="btn btn-outline-primary mt-3" />
+      </form>
+    </section>
+    <section class="table-container col-md-6 col-sm-11 mx-auto mt-5">
+      <h1>Courses</h1>
+      <table class="table table-dark table-striped mt-3">
+        <thead>
+          <th>Course Name</th>
+          <th>Description</th>
+          <th>Date Added</th>
+          <th>Actions</th>
+        </thead>
+        <tbody>
+          {% for course in courses %}
+          <tr>
+            <td>{{ course.name }}</td>
+            <td>{{ course.description.content }}</td>
+            <td>{{ course.created_at }}</td>
+            <td>
+              <a href="course/{{ course.id }}/delete">Remove</a>
+            </td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </section>
+  </body>
+</html>
