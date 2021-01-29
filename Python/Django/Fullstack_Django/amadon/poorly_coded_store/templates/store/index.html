@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Amadon</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body class="bg-dark text-light">
+    <header>
+      <h1 class="col-10 mx-auto">Amadon Store!</h1>
+    </header>
+    <main class="col-10 mx-auto mt-3">
+      <table class="table table-dark table-striped">
+        <thead>
+          <tr>
+            <th>Item</th>
+            <th>Price</th>
+            <th>Quantity</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for product in all_products %}
+          <tr>
+            <form action="/process-purchase" method="POST">
+              {% csrf_token %}
+              <td>{{product.description}}</td>
+              <td>
+                <input
+                  type="hidden"
+                  name="id"
+                  value="{{ product.id }}"
+                />{{product.price}}
+              </td>
+              <td>
+                <select name="quantity" class="form-select-sm">
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                </select>
+              </td>
+              <td>
+                <input
+                  type="submit"
+                  class="btn btn-outline-success"
+                  value="Buy!"
+                />
+              </td>
+            </form>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </main>
+  </body>
+</html>
