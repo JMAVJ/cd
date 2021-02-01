@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Log in</title>
+    <link
+      href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body
+    class="bg-gradient-to-r from-purple-400 to-blue-300 text-gray-200 align-bottom"
+  >
+    <header class="py-3 px-4 flex items-center">
+      <a href="/" class="flex items-center">
+        <h1 class="lg:ml-20 text-2xl font-bold mr-1">Wall</h1>
+        <svg
+          class="w-7 h-7"
+          fill="currentColor"
+          viewBox="0 0 20 20"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M3 4a1 1 0 011-1h3a1 1 0 011 1v3a1 1 0 01-1 1H4a1 1 0 01-1-1V4zm2 2V5h1v1H5zM3 13a1 1 0 011-1h3a1 1 0 011 1v3a1 1 0 01-1 1H4a1 1 0 01-1-1v-3zm2 2v-1h1v1H5zM13 3a1 1 0 00-1 1v3a1 1 0 001 1h3a1 1 0 001-1V4a1 1 0 00-1-1h-3zm1 2v1h1V5h-1z"
+            clip-rule="evenodd"
+          ></path>
+          <path
+            d="M11 4a1 1 0 10-2 0v1a1 1 0 002 0V4zM10 7a1 1 0 011 1v1h2a1 1 0 110 2h-3a1 1 0 01-1-1V8a1 1 0 011-1zM16 9a1 1 0 100 2 1 1 0 000-2zM9 13a1 1 0 011-1h1a1 1 0 110 2v2a1 1 0 11-2 0v-3zM7 11a1 1 0 100-2H4a1 1 0 100 2h3zM17 13a1 1 0 01-1 1h-2a1 1 0 110-2h2a1 1 0 011 1zM16 17a1 1 0 100-2h-3a1 1 0 100 2h3z"
+          ></path>
+        </svg>
+      </a>
+    </header>
+    <main>
+      <div
+        class="flex lg:mt-10 mt-20 flex-col justify-center text-center items-center p-4"
+      >
+        <h1
+          class="lg:text-6xl lg:m-20 lg:w-1/4 md:text-5xl leading-snug text-4xl font-bold"
+        >
+          Log In
+        </h1>
+        <div class="lg:mt-3 mt-20 text-xl font-semibold">
+          <form action="/auth" method="POST">
+            {% csrf_token %}
+            <label for="username" class="mb-9">Username</label>
+            <input
+              type="text"
+              name="username"
+              id="username"
+              class="block w-80 h-7 rounded bg-purple-300 mb-5 py-4 px-2 text-gray-700"
+            />
+            <label for="password">Password</label>
+            <input
+              type="password"
+              name="password"
+              id="password"
+              class="block w-80 h-7 rounded bg-purple-300 mb-5 py-4 px-2 text-gray-700"
+            />
+            {% if messages %}
+            <div class="bg-yellow-600 p-2 rounded w-80">
+              {% for message in messages %}
+              <p class="text-sm font-bold">{{ message }}</p>
+              {% endfor %}
+            </div>
+            {% endif %}
+            <div class="w-80 mt-10 flex flex-col justify-center">
+              <button
+                type="submit"
+                class="bg-pink-100 text-gray-700 rounded-full focus:outline-none hover:bg-pink-300 transition duration-300 font-semibold py-2 px-4"
+              >
+                Log In
+              </button>
+            </div>
+          </form>
+          <p class="mt-2 text-sm">
+            Don't have an account yet?
+            <a class="underline" href="/register">Register</a>
+          </p>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>

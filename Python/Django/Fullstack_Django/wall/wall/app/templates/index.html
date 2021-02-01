@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Wall</title>
+    <link
+      href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body
+    class="bg-gradient-to-r from-purple-400 to-blue-300 text-gray-200 align-bottom"
+  >
+    <header class="py-3 px-4 flex items-center">
+      <a href="/" class="flex items-center">
+        <h1 class="lg:ml-20 text-2xl font-bold mr-1">Wall</h1>
+        <svg
+          class="w-7 h-7"
+          fill="currentColor"
+          viewBox="0 0 20 20"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M3 4a1 1 0 011-1h3a1 1 0 011 1v3a1 1 0 01-1 1H4a1 1 0 01-1-1V4zm2 2V5h1v1H5zM3 13a1 1 0 011-1h3a1 1 0 011 1v3a1 1 0 01-1 1H4a1 1 0 01-1-1v-3zm2 2v-1h1v1H5zM13 3a1 1 0 00-1 1v3a1 1 0 001 1h3a1 1 0 001-1V4a1 1 0 00-1-1h-3zm1 2v1h1V5h-1z"
+            clip-rule="evenodd"
+          ></path>
+          <path
+            d="M11 4a1 1 0 10-2 0v1a1 1 0 002 0V4zM10 7a1 1 0 011 1v1h2a1 1 0 110 2h-3a1 1 0 01-1-1V8a1 1 0 011-1zM16 9a1 1 0 100 2 1 1 0 000-2zM9 13a1 1 0 011-1h1a1 1 0 110 2v2a1 1 0 11-2 0v-3zM7 11a1 1 0 100-2H4a1 1 0 100 2h3zM17 13a1 1 0 01-1 1h-2a1 1 0 110-2h2a1 1 0 011 1zM16 17a1 1 0 100-2h-3a1 1 0 100 2h3z"
+          ></path>
+        </svg>
+      </a>
+    </header>
+    <main>
+      <div class="flex h-screen flex-col justify-center items-center p-4">
+        <h1
+          class="lg:text-6xl lg:m-20 md:text-5xl leading-snug text-7xl font-bold"
+        >
+          Share your thoughts freely
+        </h1>
+        <a href="/register">
+          <button
+            class="mt-20 bg-pink-100 animate-pulse text-gray-700 rounded-full focus:outline-none hover:bg-pink-300 transition duration-300 text-black font-bold py-6 px-12"
+          >
+            Join Us
+          </button>
+        </a>
+        <p class="mt-2">
+          Already have an account? <a class="underline" href="/login">Log in</a>
+        </p>
+      </div>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Wall</title>
+    <link
+      href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="bg-gray-800 overflow-x-hidden">
+    <header
+      class="fixed top-0 z-10 w-screen py-3 px-4 text-gray-200 bg-gradient-to-r from-purple-400 to-blue-300"
+    >
+      <div class="lg:mx-20 flex items-center justify-between">
+        <a href="/" class="flex items-center">
+          <h1 class="text-2xl font-bold mr-1">Wall</h1>
+          <svg
+            class="w-7 h-7"
+            fill="currentColor"
+            viewBox="0 0 20 20"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M3 4a1 1 0 011-1h3a1 1 0 011 1v3a1 1 0 01-1 1H4a1 1 0 01-1-1V4zm2 2V5h1v1H5zM3 13a1 1 0 011-1h3a1 1 0 011 1v3a1 1 0 01-1 1H4a1 1 0 01-1-1v-3zm2 2v-1h1v1H5zM13 3a1 1 0 00-1 1v3a1 1 0 001 1h3a1 1 0 001-1V4a1 1 0 00-1-1h-3zm1 2v1h1V5h-1z"
+              clip-rule="evenodd"
+            ></path>
+            <path
+              d="M11 4a1 1 0 10-2 0v1a1 1 0 002 0V4zM10 7a1 1 0 011 1v1h2a1 1 0 110 2h-3a1 1 0 01-1-1V8a1 1 0 011-1zM16 9a1 1 0 100 2 1 1 0 000-2zM9 13a1 1 0 011-1h1a1 1 0 110 2v2a1 1 0 11-2 0v-3zM7 11a1 1 0 100-2H4a1 1 0 100 2h3zM17 13a1 1 0 01-1 1h-2a1 1 0 110-2h2a1 1 0 011 1zM16 17a1 1 0 100-2h-3a1 1 0 100 2h3z"
+            ></path>
+          </svg>
+        </a>
+        <div class="flex space-x-6">
+          <a href="/">
+            <svg
+              class="w-7 h-7"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M17.414 2.586a2 2 0 00-2.828 0L7 10.172V13h2.828l7.586-7.586a2 2 0 000-2.828z"
+              ></path>
+              <path
+                fill-rule="evenodd"
+                d="M2 6a2 2 0 012-2h4a1 1 0 010 2H4v10h10v-4a1 1 0 112 0v4a2 2 0 01-2 2H4a2 2 0 01-2-2V6z"
+                clip-rule="evenodd"
+              ></path>
+            </svg>
+          </a>
+          <a href="/auth/logout">
+            <svg
+              class="w-7 h-7"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"
+              ></path></svg
+          ></a>
+        </div>
+      </div>
+    </header>
+    <div
+      class="absolute top-0 md:h-96 h-5/6 w-screen bg-gradient-to-r from-purple-400 to-blue-300 rounded-br-full"
+    ></div>
+    <section class="px-4 relative mt-36">
+      <form
+        action="/post"
+        method="POST"
+        class="text-center flex flex-col items-center"
+      >
+        {% csrf_token %}
+        <textarea
+          name="post"
+          id="post"
+          cols="45"
+          rows="5"
+          maxlength="200"
+          class="lg:w-1/3 rounded bg-gray-900 text-gray-200 text-xl font-semibold p-3 resize-none w-10/12"
+          placeholder="Type Something as {{ user.username }}"
+        ></textarea>
+        <button
+          type="submit"
+          class="focus:outline-none rounded-full bg-gray-900 font-semibold md:px-20 px-10 py-3 text-blue-500 mt-10 hover:bg-gray-800 hover:text-blue-300 transition duration-300"
+        >
+          <svg
+            class="w-6 h-6"
+            fill="currentColor"
+            viewBox="0 0 20 20"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M10.293 15.707a1 1 0 010-1.414L14.586 10l-4.293-4.293a1 1 0 111.414-1.414l5 5a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0z"
+              clip-rule="evenodd"
+            ></path>
+            <path
+              fill-rule="evenodd"
+              d="M4.293 15.707a1 1 0 010-1.414L8.586 10 4.293 5.707a1 1 0 011.414-1.414l5 5a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0z"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
+        </button>
+      </form>
+    </section>
+    <section class="text-center flex flex-col items-center mt-20 relative">
+      {% for post in posts %}
+      <div class="bg-gray-700 rounded lg:w-1/3 w-10/12 text-left p-5 mb-8">
+        <div class="text-gray-400 font-semibold flex justify-between">
+          <p>{{ post.user.username }}</p>
+          <p>{{ post.created_at }}</p>
+        </div>
+        <h2 class="text-gray-200 text-xl font-semibold break-words mt-4">
+          {{ post.content }}
+        </h2>
+        <ul class="mt-4 text-gray-400 flex">
+          <a href="/">
+            <li>
+              <svg
+                class="w-6 h-6 hover:text-gray-300 transition duration-300"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M18 13V5a2 2 0 00-2-2H4a2 2 0 00-2 2v8a2 2 0 002 2h3l3 3 3-3h3a2 2 0 002-2zM5 7a1 1 0 011-1h8a1 1 0 110 2H6a1 1 0 01-1-1zm1 3a1 1 0 100 2h3a1 1 0 100-2H6z"
+                  clip-rule="evenodd"
+                ></path>
+              </svg>
+            </li>
+          </a>
+        </ul>
+      </div>
+      {% endfor %}
+    </section>
+  </body>
+</html>
