@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{ book.title }}</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <header>
+      <h1>Welcome, {{ user.first_name }}</h1>
+    </header>
+    <main>
+      <section class="col-5 d-inline-block align-top">
+        <h3>{{ book.title }}</h3>
+        <p>
+          Added by: {{book.uploaded_by.first_name}}
+          {{book.uploaded_by.last_name}}
+        </p>
+        <p>Added on: {{book.created_at}}</p>
+        <p>Updated on: {{book.updated_at}}</p>
+        <p>Description: {{book.desc}}</p>
+      </section>
+      <section class="col-5 d-inline-block align-top">
+        <h3>Users who like this book</h3>
+        <ul>
+          {% for user in book.liked_by.all %}
+          <li>{{user.first_name}} {{user.last_name}}</li>
+          {% endfor %}
+        </ul>
+      </section>
+    </main>
+  </body>
+</html>
