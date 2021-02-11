@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body class="bg-dark text-light">
+    <header class="">
+      <div class="col-sm-12 col-9 mx-auto d-flex justify-content-between">
+        <div>
+          <h1 class="d-inline-block align-middle mx-4">Test App</h1>
+          <a href="/dashboard">
+            <h5 class="d-inline-block text-decoration-none align-middle">
+              Dashboard
+            </h5>
+          </a>
+          <a href="/">
+            <h5 class="d-inline-block text-decoration-none align-middle mx-4">
+              Profile
+            </h5>
+          </a>
+        </div>
+        <div>
+          <a href="/auth/logout">
+            <h5 class="d-inline-block text-decoration-none mt-2">Log Out</h5>
+          </a>
+        </div>
+      </div>
+    </header>
+    <section>
+      <div class="container col-md-11 col-9">
+        <h1>{{user.first_name}} {{user.last_name}}</h1>
+        <p>Registered at: {{user.date_joined}}</p>
+        <p>User ID: {{user.id}}</p>
+        <p>Email Adress: {{user.email}}</p>
+        <p>Description: {{user.description}}</p>
+      </div>
+    </section>
+    <section>
+      <div class="container col-sm-12 col-9">
+        <h1>Leave a message for {{user.first_name}}</h1>
+        <form action="" class="form">
+          {% csrf_token %}
+          <textarea
+            name="message"
+            id="message"
+            cols="50"
+            rows="5"
+            class="textarea d-block"
+          ></textarea>
+          <input
+            type="submit"
+            value="Post"
+            class="btn btn-outline-success mt-3"
+          />
+        </form>
+      </div>
+    </section>
+    <section>
+      <div class="container col-sm-12 col-9">Messages here</div>
+    </section>
+  </body>
+</html>
