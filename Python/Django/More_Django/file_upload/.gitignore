@@ -1,0 +1,10 @@
+# Virtual Environment
+env/
+
+# Django
+file_upload/documents/
+db.sqlite3
+*.log
+*.pot
+*.pyc
+__pycache__/
