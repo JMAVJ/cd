@@ -66,7 +66,39 @@ def auth():
     return render_template('auth.html')
 
 
+# ===
+@app.route('/remove-user/<int:id>')
+def remove_user(id):
+    if session.get('user_id') is None:
+        return redirect('/')
+    if session.get('permissions') != 'Admin':
+        session.clear()
+        return redirect('/warning')
+
+    mysql = connectToMySQL(DATABASE)
+    query = 'DELETE FROM users WHERE id=%(id)s'
+    mysql.query_db(query, {'id': id})
+
+    return redirect('/admin')
+
+
+@app.route('/make-admin/<int:id>')
+def make_admin(id):
+    if session.get('user_id') is None:
+        return redirect('/')
+    if session.get('permissions') != 'Admin':
+        session.clear()
+        return redirect('/warning')
+
+    mysql = connectToMySQL(DATABASE)
+    query = 'UPDATE users SET status="Admin" WHERE id=%(id)s'
+    mysql.query_db(query, {'id': id})
+
+    return redirect('/admin')
+
 # Authentication
+
+
 @app.route('/login', methods=['POST'])
 def login():
     data = {

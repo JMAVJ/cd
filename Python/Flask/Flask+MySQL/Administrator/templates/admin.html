@@ -37,9 +37,9 @@
             <td>{{ user.email }}</td>
             <td>{{ user.status }}</td>
             <td>
-              <a href="">Remove</a>
+              <a href="/remove-user/{{ user.id }}">Remove</a>
               {% if user.status == "User" %}
-              <a href="">Make Administrator</a>
+              <a href="/make-admin/{{ user.id }}">Make Administrator</a>
               {% endif %}
             </td>
           </tr>
