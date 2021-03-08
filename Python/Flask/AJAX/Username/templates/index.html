@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Username</title>
+    <!-- Tailwind -->
+    <link
+      href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="bg-gray-900 text-gray-200">
+    <header class="p-3">
+      <h1 class="text-2xl">Register</h1>
+    </header>
+    <div class="px-3">
+      <form action="" class="w-80 h-60 flex flex-col justify-around m-auto">
+        <input
+          type="text"
+          name="username"
+          id="username"
+          placeholder="Username"
+          autocomplete="none"
+          class="bg-transparent rounded-lg border w-full p-3 focus:outline-none"
+        />
+        <div id="username-exists" class="hidden"></div>
+        <input
+          type="password"
+          name="password"
+          id="password"
+          placeholder="Password"
+          class="bg-transparent rounded-lg border w-full p-3 focus:outline-none"
+        />
+        <input
+          type="password_confirmation"
+          name="password_confirmation"
+          id="password-confirmation"
+          placeholder="Confirm Password"
+          class="bg-transparent rounded-lg border w-full p-3 focus:outline-none"
+        />
+        <button
+          type="submit"
+          class="w-full rounded-lg p-2 border-2 border-green-300 hover:bg-green-400 hover:text-gray-500 transition duration-300"
+        >
+          Submit
+        </button>
+      </form>
+    </div>
+    <!-- JQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- JS -->
+    <script src="/static/app.js"></script>
+  </body>
+</html>
