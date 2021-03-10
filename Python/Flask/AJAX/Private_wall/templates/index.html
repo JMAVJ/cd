@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Private Wall</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="mx-auto col-10 d-flex justify-content-between py-3 px-5">
+        <h1>Coding Dojo Wall</h1>
+        <a href="/sign-out">
+          <button class="btn btn-outline-danger">Logout</button></a
+        >
+      </div>
+    </header>
+    <main class="text-center">
+      <section
+        class="col-5 py-3 px-5 d-inline-block border-end border-2 border-dark text-start"
+      >
+        <div id="messageNumber">
+          <h3>
+            You have {{ message_quantity }} {{ "message" if message_quantity ==
+            1 else "messages" }}
+          </h3>
+        </div>
+        <div class="mt-4" id="messages">
+          {% for message in messages %}
+          <h5>{{ message['sender'] }} said:</h5>
+          <p>{{ message['message'] }}</p>
+          <p
+            class="text-primary deleteButton"
+            style="cursor: pointer"
+            messageId="{{message['id']}}"
+          >
+            Delete
+          </p>
+          {% endfor %}
+        </div>
+      </section>
+      <section class="col-5 px-5 py-3 d-inline-block text-start align-top">
+        <h3>Send messages</h3>
+        <p>You have sent {{sent_messages}} messages</p>
+        <div class="mt-4">
+          {% with messages = get_flashed_messages() %} {% if messages %} {% for
+          message in messages %}
+          <div class="alert alert-danger">{{ message }}</div>
+          {% endfor %} {% endif %} {% endwith %} {% for user in users %}
+          <form action="/message/send" method="POST" class="form">
+            <h5>{{ user.name }}</h5>
+            <input type="hidden" name="send_to" value="{{ user.id }}" />
+            <textarea
+              style="resize: none"
+              name="message"
+              id="message"
+              cols="30"
+              rows="3"
+              class="textarea d-block"
+            ></textarea>
+            <input
+              type="submit"
+              value="Send"
+              class="btn btn-sm btn-outline-primary mt-1"
+            />
+          </form>
+          {% endfor %}
+        </div>
+      </section>
+    </main>
+    <!-- JQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- JavaScript -->
+    <script src="static/app.js"></script>
+  </body>
+</html>
