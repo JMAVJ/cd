@@ -23,7 +23,7 @@ def index():
     }
 
     mysql = connectToMySQL(DATABASE_NAME)
-    query = 'SELECT messages.id, message, sent_to, sent_by, concat(first_name, " ", last_name) as sender FROM `messages` INNER JOIN users WHERE users.id = messages.sent_by AND messages.sent_to = %(user_id)s'
+    query = 'SELECT message, sent_to, sent_by, concat(first_name, " ", last_name) as sender FROM `messages` INNER JOIN users WHERE users.id = messages.sent_by AND messages.sent_to = %(user_id)s'
 
     messages = mysql.query_db(query, data)
     message_quantity = len(messages)
@@ -63,30 +63,6 @@ def send_message():
     mysql = connectToMySQL(DATABASE_NAME)
     mysql.query_db(query, data)
     return redirect('/')
-
-
-@app.route('/message/delete/<int:message_id>', methods=['DELETE'])
-def delete_message(message_id):
-    mysql = connectToMySQL(DATABASE_NAME)
-    query = 'DELETE FROM messages WHERE id = %(message_id)s'
-    data = {
-        'message_id': message_id,
-    }
-    result = mysql.query_db(query, data)
-    return 'Ok'
-
-
-@app.route('/messages')
-def get_messages():
-    mysql = connectToMySQL(DATABASE_NAME)
-    query = 'SELECT messages.id, message, sent_to, sent_by, concat(first_name, " ", last_name) as sender FROM `messages` INNER JOIN users WHERE users.id = messages.sent_by AND messages.sent_to = %(user_id)s'
-    data = {
-        'user_id': session['user_id'],
-    }
-    messages = mysql.query_db(query, data)
-    return {
-        'data': messages,
-    }
 
 
 @app.route('/auth')

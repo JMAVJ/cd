@@ -1,0 +1,23 @@
+Dojo.objects.create(name="Dojo", city="city_dojo", state="ST")
+Dojo.objects.create(name="Dojo2", city="city_dojo2", state="ST")
+Dojo.objects.create(name="Dojo3", city="city_dojo3", state="ST")
+
+Dojo.objects.get(id=1).delete()
+Dojo.objects.get(id=2).delete()
+Dojo.objects.get(id=3).delete()
+
+Dojo.objects.create(name="Dojo", city="city_dojo", state="ST")
+Dojo.objects.create(name="Dojo2", city="city_dojo2", state="ST")
+Dojo.objects.create(name="Dojo3", city="city_dojo3", state="ST")
+
+Ninja.objects.create(first_name="first_ninja1", last_name="last_ninja1", dojo=Dojo.objects.get(id=1))
+Ninja.objects.create(first_name="first_ninja2", last_name="last_ninja2", dojo=Dojo.objects.get(id=2))
+Ninja.objects.create(first_name="first_ninja3", last_name="last_ninja3", dojo=Dojo.objects.get(id=3))
+
+Ninja.objects.get(dojo=Dojo.objects.get(id=1))
+Ninja.objects.get(dojo=Dojo.objects.get(id=2))
+Ninja.objects.get(dojo=Dojo.objects.get(id=3))
+
+Ninja.objects.last()
+
+Dojo.objects.create(name="Dojo", city="city_dojo", state="ST", desc='dojo_desc')

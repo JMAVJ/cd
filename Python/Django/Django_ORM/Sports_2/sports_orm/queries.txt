@@ -1,0 +1,4 @@
+1. League.objects.get(name="league_name").teams.all()
+2. Team.objects.get(team_name="team_name", location="team_location").curr_players.all()
+3. League.objects.get(name="league_name").teams.values('curr_players')
+4. 
