@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Search Bar</title>
+    <!-- TailwindCSS -->
+    <link
+      href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="bg-green-300 text-gray-600 text-center">
+    <div class="inline-block w-80">
+      <h1 class="text-xl font-semibold mb-2">Languages</h1>
+      <form action="/search" method="GET">
+        <input
+          type="text"
+          name="search"
+          id="search"
+          autocomplete="off"
+          placeholder="Search for a programming language"
+          class="rounded-lg p-2 border-2 border-gray-500 bg-transparent w-full focus:outline-none"
+        />
+      </form>
+      <p class="font-semibold hidden" id="suggestions-label">Suggestions</p>
+      <div class="" id="suggestions"></div>
+    </div>
+    <!-- JQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- JavaScript -->
+    <script src="static/app.js"></script>
+  </body>
+</html>
