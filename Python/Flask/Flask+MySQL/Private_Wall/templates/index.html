@@ -25,14 +25,23 @@
       <section
         class="col-5 py-3 px-5 d-inline-block border-end border-2 border-dark text-start"
       >
-        <h3>
-          You have {{ message_quantity }} {{ "message" if message_quantity == 1
-          else "messages" }}
-        </h3>
-        <div class="mt-4">
+        <div id="messageNumber">
+          <h3>
+            You have {{ message_quantity }} {{ "message" if message_quantity ==
+            1 else "messages" }}
+          </h3>
+        </div>
+        <div class="mt-4" id="messages">
           {% for message in messages %}
           <h5>{{ message['sender'] }} said:</h5>
           <p>{{ message['message'] }}</p>
+          <p
+            class="text-primary deleteButton"
+            style="cursor: pointer"
+            messageId="{{message['id']}}"
+          >
+            Delete
+          </p>
           {% endfor %}
         </div>
       </section>
@@ -65,5 +74,9 @@
         </div>
       </section>
     </main>
+    <!-- JQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- JavaScript -->
+    <script src="static/app.js"></script>
   </body>
 </html>
