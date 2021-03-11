@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign In</title>
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body>
+  <header class="p-3">
+    <h1 class="col-4 m-auto">Sign Up</h1>
+  </header>
+  <main>
+    <section class="form col-4 m-auto">
+      {% if messages %}
+        {% for message in messages %}
+          <div {% if message.tags %} class="{{ message.tags }}" {% endif %}>{{ message }}</div>
+        {% endfor %}
+      {% endif %}
+      <form action="/sign-up" method='POST' class="form">
+        {% csrf_token %}
+        <label for="email">Email</label>
+        <input type="text" name="email" id="email" class="form-control">
+        <label for="password">Password</label>
+        <input type="password" name="password" id="password" class="form-control">
+        <input type="submit" value="Sign Up" class="my-4 btn btn-primary">
+      </form>
+      <a href="/sign-in">Sign In</a>
+    </section>
+  </main>
+</body>
+
+</html>
