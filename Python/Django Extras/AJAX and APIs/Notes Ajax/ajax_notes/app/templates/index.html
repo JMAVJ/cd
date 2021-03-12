@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Notes</title>
+    <!-- Bootstrap -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <section class="my-3">
+      <div
+        class="container col-10 d-flex flex-wrap justify-content-between"
+        id="notes-container"
+      ></div>
+    </section>
+    <section>
+      <form action="/create-note" method="POST" class="container col-4">
+        {% csrf_token %}
+        <input
+          type="text"
+          name="title"
+          id="title"
+          placeholder="Note Title"
+          class="form-control mb-3"
+        />
+        <textarea
+          name="description"
+          id=""
+          cols="30"
+          rows="10"
+          style="resize: none"
+          placeholder="Description"
+          class="form-control mb-3"
+        ></textarea>
+        <input
+          type="submit"
+          value="Create Note"
+          class="btn btn-outline-primary"
+        />
+      </form>
+    </section>
+    <!-- JQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!-- JavaScript -->
+    <script src="static/app.js"></script>
+  </body>
+</html>
