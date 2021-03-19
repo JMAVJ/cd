@@ -18,6 +18,15 @@
         <h1>Face Detection</h1>
       </div>
     </header>
+    <section class="container col-lg-4 col-8">
+      <ul>
+        {% for image in images %}
+        <li>
+          <img src="{{ image.image }}" class="col-8 mb-2"></img>   
+        </li>
+        {% endfor %}
+      </ul>
+    </section>
     <section class="">
       <div class="container col-lg-4 col-8">
         <form
