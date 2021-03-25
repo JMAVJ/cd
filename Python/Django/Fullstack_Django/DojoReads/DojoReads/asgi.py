@@ -1,5 +1,5 @@
 """
-ASGI config for dojo_reads project.
+ASGI config for DojoReads project.
 
 It exposes the ASGI callable as a module-level variable named ``application``.
 
@@ -11,6 +11,6 @@ import os
 
 from django.core.asgi import get_asgi_application
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'dojo_reads.settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'DojoReads.settings')
 
 application = get_asgi_application()

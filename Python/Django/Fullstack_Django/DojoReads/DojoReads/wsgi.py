@@ -1,5 +1,5 @@
 """
-WSGI config for dojo_reads project.
+WSGI config for DojoReads project.
 
 It exposes the WSGI callable as a module-level variable named ``application``.
 
@@ -11,6 +11,6 @@ import os
 
 from django.core.wsgi import get_wsgi_application
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'dojo_reads.settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'DojoReads.settings')
 
 application = get_wsgi_application()
