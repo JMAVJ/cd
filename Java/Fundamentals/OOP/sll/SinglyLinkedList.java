@@ -50,7 +50,7 @@ public class SinglyLinkedList {
             }
             runner = runner.next;
         }
-        return new Node(-1);
+        return null;
     }
 
     public void removeAt(int position) {
