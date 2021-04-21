@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<restaurantMenu>
+    <breakfast>
+        <item category="drinks">
+            <name>drink1</name>
+            <description>desc1</description>
+            <price>$1.00</price>
+        </item>
+        <item category="drinks">
+            <name>drink2</name>
+            <description>desc2</description>
+            <price>$1.50</price>
+        </item>
+    </breakfast>
+    <dinner>
+        <item category="appetizers">
+            <name>appetizer1</name>
+            <description>desc1</description>
+            <price>$4.50</price>
+        </item>
+        <item category="appetizers">
+            <name>appetizer2</name>
+            <description>desc2</description>
+            <price>$7.00</price>
+        </item>
+        <item category="dish">
+            <name>dish1</name>
+            <description>desc1</description>
+            <price>$15.00</price>
+        </item>
+    </dinner>
+</restaurantMenu>
