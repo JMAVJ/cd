@@ -1,0 +1,14 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.blue {
+  color: rgb(95, 195, 253);
+}
+
+.green {
+  color: rgb(87, 195, 101);
+}
