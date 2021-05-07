@@ -47,7 +47,6 @@ public class MainController {
         String currentActivity = "You entered a " + place + " and " + (goldEarned > 0 ? "earned " : "lost ") + goldEarned + " gold";
         List<String> activities = (ArrayList<String>) session.getAttribute("activities");
         activities.add(currentActivity);
-        System.out.println(activities);
         session.setAttribute("activities", activities);
         session.setAttribute("gold", actualGold + goldEarned);
         return "redirect:/gold";
