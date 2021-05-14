@@ -26,12 +26,13 @@ uri="http://java.sun.com/jsp/jstl/core"%>
           type="text"
           name="artist"
           id="artist"
+          placeholder="Search by artist"
           class="form-control bg-transparent text-light"
           autocomplete="off"
         />
         <input
           type="submit"
-          value="Search Artists"
+          value="Search"
           class="btn btn-outline-primary"
         />
       </form>

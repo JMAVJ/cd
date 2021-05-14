@@ -15,12 +15,12 @@ public class Song {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @Size(min = 1, max = 64)
+    @Size(min = 1, max = 64, message = "El titulo debe estar entre 1 y 64")
     private String title;
-    @Size(min = 1, max = 64)
+    @Size(min = 1, max = 64, message = "El artista debe estar entre 1 y 64")
     private String artist;
-    @Min(1)
-    @Max(10)
+    @Min(value = 1, message="The minimum rating is 1")
+    @Max(value = 10, message = "The maximum rating is 10")
     private int rating;
 
     public Song() {

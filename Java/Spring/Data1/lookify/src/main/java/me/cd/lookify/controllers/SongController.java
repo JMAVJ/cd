@@ -4,6 +4,7 @@ import javax.validation.Valid;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -39,12 +40,16 @@ public class SongController {
     }
 
     @RequestMapping("/songs/new")
-    public String newSong() {
+    public String newSong(Model model) {
+        model.addAttribute("song", new Song());
         return "new.jsp";
     }
 
     @RequestMapping(value="/songs/new", method=RequestMethod.POST)
-    public String addSong(@Valid @ModelAttribute("song") Song song) {
+    public String addSong(@Valid @ModelAttribute("song") Song song, BindingResult result) {
+        if (result.hasErrors()) {
+            return "new.jsp";
+        }
         songService.addSong(song);
         return "redirect:/dashboard";
     }
