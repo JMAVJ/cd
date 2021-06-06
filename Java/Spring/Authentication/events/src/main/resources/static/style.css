@@ -1,0 +1,6 @@
+.messages {
+  height: 10rem;
+  width: 100%;
+  overflow-y: scroll;
+  background-color: aqua;
+}
