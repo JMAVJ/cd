@@ -28,7 +28,7 @@ export default class PersonCard extends Component {
         <h1>{lastName}, {firstName}</h1>
         <p>Age: {dynamicAge}</p>
         <p>Hair Color: {hairColor}</p>
-        <button onClick={this.updateAge}>Birthday Button for {firstName} {lastName}</button>
+        <button onClick={() => this.updateAge()}>Birthday Button for {firstName} {lastName}</button>
       </div>
     )
   }
