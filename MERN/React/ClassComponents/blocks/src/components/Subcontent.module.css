@@ -1,0 +1,8 @@
+.subcontent {
+  display: inline-block;
+  text-align: center;
+  width: 25rem;
+  height: 30rem;
+  margin-left: 5rem;
+  background-color: yellow;
+}

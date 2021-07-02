@@ -1,0 +1,9 @@
+.main {
+  width: 95.3rem;
+  height: 50rem;
+  background-color: orange;
+  display: inline-block;
+  margin-left: 1.5rem;
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+}

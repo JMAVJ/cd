@@ -1,0 +1,8 @@
+.navigation {
+  height: 50rem;
+  width: 20rem;
+  display: inline-block;
+  vertical-align: top;
+  background-color: rgb(64, 64, 163);
+  margin-top: 1.5rem;
+}
