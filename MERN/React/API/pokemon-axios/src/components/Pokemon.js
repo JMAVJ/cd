@@ -5,7 +5,7 @@ const Pokemon = () => {
   const [data, setData] = useState([]);
 
   const handleClick = () => {
-    const API_URL = 'https://pokeapi.co/api/v2/pokemon?limit=100';
+    const API_URL = 'https://pokeapi.co/api/v2/pokemon?limit=807';
     axios
       .get(API_URL)
       .then(({ data: { results } }) => {
